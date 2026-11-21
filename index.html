@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zaara Palasara · Portfolio</title>
+<meta name="description" content="Zaara Palasara — Associate AI Engineer and CS undergrad building full-stack apps and agentic AI workflows.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2730%27 fill=%27%23e8401f%27/%3E%3Ctext x=%2732%27 y=%2741%27 font-family=%27Arial,sans-serif%27 font-weight=%27800%27 font-size=%2724%27 fill=%27white%27 text-anchor=%27middle%27%3EZP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+<style>
+/*
+VOICE: playful, confident scrapbook of a builder; warm but precise.
+IDEA: a Pinterest board — her work pinned up with washi tape, sticky notes and handwritten margin notes.
+PICTURE: hero collage of three taped, tilted product screenshots, a ZP sticker and scribbled callouts.
+COLOUR and TYPE: blush-pink board, plum ink, cobalt support, masala-tomato accent, pastel notes; Syne 800 display, DM Sans body, Caveat for handwriting.
+LAYOUT: nav, giant name over the collage, filter chips, masonry board of pins, cobalt contact band; project pins open a gallery.
+*/
+:root{color-scheme:light dark;
+--bg:light-dark(#f7d6cc,#1f1519);--ink:light-dark(#2a141c,#f6e6e0);--soft:light-dark(#6b4a52,#c9aeb2);
+--card:light-dark(#fffaf8,#2c2025);--line:light-dark(#e8bfb2,#45333a);
+--cobalt:light-dark(#2738c9,#8f9cff);--cobalt-bg:light-dark(#2738c9,#26307e);--tomato:light-dark(#e8401f,#ff7a5c);
+--butter:light-dark(#ffe590,#4a4020);--sky:light-dark(#c6e3ff,#1f3550);--lilac:light-dark(#ddcdff,#352a55);--mint:light-dark(#c9efd6,#1e3d2c);--peach:light-dark(#ffc9b3,#4d2b22);
+--tape:light-dark(rgba(255,229,144,.85),rgba(255,214,102,.55));--tape2:light-dark(rgba(198,227,255,.85),rgba(143,156,255,.45));
+--shadow:0 1px 0 rgba(42,20,28,.06),0 10px 24px -12px rgba(42,20,28,.35)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "DM Sans",system-ui,sans-serif;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(light-dark(rgba(42,20,28,.09),rgba(255,255,255,.05)) 1px,transparent 1.4px);background-size:18px 18px;z-index:-1}
+a{color:inherit}
+img{display:block;max-width:100%}
+h1,h2,h3{font-family:Syne,"DM Sans",sans-serif;margin:0;line-height:1.05;text-wrap:balance}
+.hand{font-family:Caveat,cursive;font-weight:700}
+.wrap{max-width:1240px;margin:0 auto;padding:0 max(4vw,16px)}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:6px}
+svg.i{width:18px;height:18px;flex:none}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;align-items:center;gap:12px;min-height:68px}
+.logo{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--tomato);color:#fff;font:800 17px Syne;text-decoration:none;transform:rotate(-8deg);box-shadow:var(--shadow)}
+nav .links{display:flex;gap:4px;margin-left:auto;flex-wrap:wrap}
+nav .links a{padding:10px 12px;border-radius:999px;text-decoration:none;font-weight:500}
+nav .links a:hover{background:var(--card)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer;font-size:15px}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+
+/* hero */
+.hero{padding:clamp(24px,4vw,56px) 0 clamp(32px,5vw,72px)}
+.hero h1{font-size:clamp(52px,11.5vw,168px);font-weight:800;letter-spacing:-.035em;line-height:.88}
+.hero h1 span{display:block}
+.hero h1 span:last-child{padding-left:clamp(0px,9vw,140px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:clamp(20px,3vw,36px)}
+.intro p{font-size:clamp(17px,1.6vw,20px);max-width:34ch;margin:0 0 20px}
+.intro .meta{color:var(--soft);font-size:15px;margin-bottom:24px}
+.cta{display:flex;gap:10px;flex-wrap:wrap}
+.collage{position:relative;aspect-ratio:16/11}
+.shot{position:absolute;display:flex;flex-direction:column;margin:0;background:var(--card);padding:8px 8px 10px;border-radius:6px;box-shadow:0 18px 40px -18px rgba(42,20,28,.55)}
+.shot img{border-radius:3px;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top left}
+.shot figcaption{order:-1;font:700 clamp(16px,1.7vw,22px)/1 Caveat,cursive;padding:2px 100px 8px 4px;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.s1{width:62%;left:0;top:4%;transform:rotate(-4deg)}
+.s2{width:56%;right:0;top:0;transform:rotate(3.5deg);z-index:2}
+.s3{width:54%;left:22%;bottom:0;transform:rotate(-1deg);z-index:3}
+.tape{position:absolute;width:88px;height:26px;background:var(--tape);top:-12px;right:14px;rotate:-3deg;box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.tape.b{background:var(--tape2);rotate:4deg}
+.sticker{position:absolute;z-index:4;right:2%;bottom:6%;width:clamp(84px,10vw,118px);aspect-ratio:1;border-radius:50%;background:var(--cobalt-bg);color:#fff;display:grid;place-items:center;text-align:center;font:700 clamp(18px,1.9vw,24px)/1 Caveat,cursive;transform:rotate(10deg);box-shadow:var(--shadow);padding:10px}
+@media (prefers-reduced-motion:no-preference){
+.shot,.sticker{animation:settle .9s cubic-bezier(.2,.8,.2,1.2) both}
+.s2{animation-delay:.12s}.s3{animation-delay:.24s}.sticker{animation-delay:.4s}
+@keyframes settle{from{opacity:0;translate:0 30px;scale:.94}}}
+
+.me{position:relative;float:right;width:clamp(120px,13vw,170px);margin:0 0 12px 18px;background:#fff;padding:8px 8px 6px;border-radius:4px;box-shadow:0 14px 30px -14px rgba(42,20,28,.55);rotate:4deg}
+.me img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:2px}
+.me figcaption{font:700 20px/1.1 Caveat,cursive;color:#2a141c;text-align:center;padding-top:6px}
+.me .tape{right:auto;left:50%;translate:-50% 0;width:64px;height:22px;top:-11px}
+/* board */
+.board-head{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.board-head h2{font-size:clamp(32px,4.4vw,52px);font-weight:800;letter-spacing:-.02em}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{min-height:44px;padding:0 16px;border-radius:999px;border:2px solid var(--ink);background:transparent;color:var(--ink);font:500 15px "DM Sans",sans-serif;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.board{columns:4 260px;column-gap:18px;padding-bottom:clamp(40px,6vw,80px)}
+.pin{break-inside:avoid;margin:0 0 18px;background:var(--card);border-radius:18px;padding:16px;box-shadow:var(--shadow);position:relative;display:block;width:100%;text-align:left;color:inherit;font:inherit;border:0}
+.pin[hidden]{display:none}
+.pin h3{font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:6px}
+.pin p{margin:0;color:var(--soft);font-size:15px}
+.pin .cover{margin:-6px -6px 14px;border-radius:12px;overflow:hidden;background:var(--line)}
+.pin .cover img{width:100%;height:auto}
+.pin.tall .cover img{aspect-ratio:4/5;object-fit:cover;object-position:left top}
+button.pin{cursor:pointer;transition:transform .2s,box-shadow .2s}
+button.pin:hover{transform:translateY(-3px);box-shadow:0 16px 34px -14px rgba(42,20,28,.45)}
+.open{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-weight:700;font-size:14px;color:var(--cobalt)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;padding:0;list-style:none}
+.tags li{font-size:13px;padding:4px 10px;border-radius:999px;background:var(--bg);color:var(--ink)}
+.note{border-radius:4px}
+.note.butter{background:var(--butter)}.note.sky{background:var(--sky)}.note.lilac{background:var(--lilac)}.note.mint{background:var(--mint)}.note.peach{background:var(--peach)}
+.note p,.note li{color:var(--ink)}
+.tilt-l{rotate:-1.5deg}.tilt-r{rotate:1.2deg}
+.pin .tape{width:70px;height:22px;top:-10px;right:auto;left:50%;translate:-50% 0}
+.label{font-size:14px;color:var(--soft);margin:0 0 6px}
+.note .label{color:color-mix(in srgb,var(--ink) 70%,transparent)}
+.big{font:800 clamp(52px,5vw,68px)/.95 Syne,sans-serif;letter-spacing:-.03em;margin:4px 0 6px;color:var(--ink)}
+.handnote{font:700 26px/1.1 Caveat,cursive;color:var(--ink);margin:0}
+.pin ul.list{margin:10px 0 0;padding-left:18px;font-size:15px}
+.pin ul.list li{margin-bottom:6px}
+.linkrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.linkrow a{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 12px;border-radius:999px;background:var(--bg);text-decoration:none;font-weight:500;font-size:14px}
+.linkrow a:hover{background:var(--ink);color:var(--bg)}
+.note .linkrow a{background:color-mix(in srgb,var(--card) 70%,transparent)}
+.contrib{background:#0d1117;border-radius:10px;margin:12px -4px 0;overflow:hidden}
+.stickers{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.stickers span{font:700 15px Syne,sans-serif;padding:8px 12px;border-radius:10px;background:var(--card);box-shadow:0 2px 0 rgba(42,20,28,.12)}
+.stickers span:nth-child(odd){rotate:-2deg}.stickers span:nth-child(3n){rotate:2deg}
+dl.stack{margin:10px 0 0;display:grid;gap:10px}
+dl.stack dt{font-weight:700;font-size:14px}
+dl.stack dd{margin:0;color:var(--soft);font-size:14px}
+.badge{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--tomato);color:#fff;font:800 22px Syne;margin-bottom:12px;rotate:-6deg}
+
+/* contact band */
+.contact{background:var(--cobalt-bg);color:#fff;padding:clamp(40px,6vw,88px) 0}
+.contact h2{font-size:clamp(40px,7vw,96px);font-weight:800;letter-spacing:-.03em;line-height:.92}
+.contact .row{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:end}
+.contact p{font-size:18px;max-width:40ch;opacity:.9}
+.contact .mail{font:700 clamp(22px,2.6vw,32px) Syne,sans-serif;color:#fff;word-break:break-all}
+.contact .linkrow a{background:rgba(255,255,255,.14);color:#fff}
+.contact .linkrow a:hover{background:#fff;color:#2738c9}
+footer{padding:22px 0;color:var(--soft);font-size:14px}
+
+/* modal */
+dialog{border:0;padding:0;width:min(1100px,94vw);max-height:92vh;border-radius:22px;background:var(--card);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+dialog::backdrop{background:rgba(31,21,25,.7);backdrop-filter:blur(4px)}
+.m-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);max-height:92vh}
+.m-media{background:light-dark(#efe4e0,#171013);padding:18px;display:flex;flex-direction:column;gap:12px;overflow:auto}
+.m-main{position:relative;border-radius:12px;overflow:hidden;background:#000}
+.m-main img{width:100%;height:auto}
+.m-cap{font-size:14px;color:var(--soft);margin:0}
+.m-nav{position:absolute;top:50%;translate:0 -50%;width:44px;height:44px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#2a141c;cursor:pointer;display:grid;place-items:center;box-shadow:var(--shadow)}
+.m-nav.prev{left:10px}.m-nav.next{right:10px}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px}
+.thumbs button{flex:none;width:92px;border-radius:8px;overflow:hidden;border:3px solid transparent;padding:0;cursor:pointer;background:none;opacity:.65}
+.thumbs button[aria-current=true]{border-color:var(--tomato);opacity:1}
+.m-body{padding:28px;overflow:auto}
+.m-body h2{font-size:clamp(28px,3vw,40px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.m-body .sub{color:var(--soft);margin:0 0 16px}
+.m-body ul{padding-left:18px;margin:16px 0}
+.m-body li{margin-bottom:8px}
+.close{position:absolute;top:12px;right:12px;z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:var(--ink);color:var(--bg);cursor:pointer;display:grid;place-items:center}
+
+@media(max-width:860px){.hero-grid{grid-template-columns:minmax(0,1fr)}.collage{order:-1;margin:8px 0 12px}.m-grid{grid-template-columns:minmax(0,1fr)}.contact .row{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){.me{width:118px;margin-left:12px}nav .links a.hide-sm{display:none}nav .links a{padding:10px 8px}nav .btn{padding:0 14px}.shot figcaption{padding-right:60px}.shot .tape{width:56px}.hero h1 span:last-child{padding-left:0}.board{columns:1}.m-body{padding:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button.pin,.btn{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.7 5.4-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></symbol>
+<symbol id="li" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4v11H3v-11Zm6.5 0h3.8v1.5h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1v5.46h-4v-4.84c0-1.16-.02-2.65-1.61-2.65-1.62 0-1.87 1.26-1.87 2.56v4.93h-4v-11Z"/></symbol>
+<symbol id="x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+<symbol id="l" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="r" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Zaara Palasara, back to top">ZP</a>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#work" data-jump="about" class="hide-sm">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="btn" href="https://dawn-pond-595.linkyhost.page/" target="_blank" rel="noopener">Resume <svg class="i"><use href="#arrow"/></svg></a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1><span>Zaara</span><span>Palasara</span></h1>
+    <div class="hero-grid">
+      <div class="intro">
+        <figure class="me"><span class="tape b"></span><img src="img/zaara.webp" alt="Portrait of Zaara Palasara"><figcaption>hi, I'm Zaara!</figcaption></figure>
+        <p>I build full-stack apps and agentic AI workflows — from the API and database up to the screen people click.</p>
+        <div class="meta">Associate AI Engineer at Vismera · B.Tech CSE at Parul University · Vadodara, India</div>
+        <div class="cta">
+          <a class="btn" href="#work">See my work</a>
+          <a class="btn ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="collage" aria-label="Screenshots of three projects">
+        <figure class="shot s1"><span class="tape"></span><img src="img/tranzit-6.webp" alt="Tranzit product cards for expenses, income, fuel and vehicles"><figcaption>Tranzit</figcaption></figure>
+        <figure class="shot s2"><span class="tape b"></span><img src="img/jira-1.webp" alt="Jira Masala project health dashboard"><figcaption>Jira Masala</figcaption></figure>
+        <figure class="shot s3"><span class="tape"></span><img src="img/pm-3.webp" alt="Predictive maintenance correlation heatmap"><figcaption>Predictive maintenance</figcaption></figure>
+        <div class="sticker">500+ problems solved</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="work" class="wrap">
+  <div class="board-head">
+    <h2>The board</h2>
+    <div class="chips" role="group" aria-label="Filter pins">
+      <button class="chip" data-f="all" aria-pressed="true">Everything</button>
+      <button class="chip" data-f="project" aria-pressed="false">Projects</button>
+      <button class="chip" data-f="about" aria-pressed="false">Experience &amp; about</button>
+      <button class="chip" data-f="skills" aria-pressed="false">Skills</button>
+      <button class="chip" data-f="wins" aria-pressed="false">Wins</button>
+    </div>
+  </div>
+
+  <div class="board" id="board">
+    <button class="pin" data-c="project" data-p="jira">
+      <div class="cover"><img src="img/jira-1.webp" alt="Jira Masala project health dashboard showing a 66/100 health score" loading="lazy"></div>
+      <h3>Jira Masala</h3>
+      <p>An AI project manager. It scores project health, flags risks, and turns a one-line request into a story with subtasks assigned by workload.</p>
+      <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Hono</li><li>Appwrite</li><li>OpenAI + Gemini</li></ul>
+      <span class="open">Open project <svg class="i"><use href="#arrow"/></svg></span>
+    </button>
+
+    <div class="pin note butter tilt-l" data-c="about">
+      <span class="tape b"></span>
+      <p class="label">Right now</p>
+      <p class="handnote">Building agentic workflows, routing logic and MCP tool integrations at Vismera.</p>
+    </div>
+
+    <div class="pin" data-c="about" id="about">
+      <p class="label">Experience · Nov 2026 – present · Remote</p>
+      <h3>Associate AI Engineer, Vismera</h3>
+      <p>Vismera is the Accountable Agentic OS. I work on the layer where agents meet the app.</p>
+      <ul class="list">
+        <li>Build agentic workflows, backend integrations and multi-step automation pipelines.</li>
+        <li>Orchestrate workflows on the Vismera Kernel: routing logic, guardrails and MCP-based tool connections.</li>
+        <li>Debug across APIs, services and workflow runs; find root causes and ship code-level fixes.</li>
+      </ul>
+    </div>
+
+    <button class="pin tall" data-c="project" data-p="tranzit">
+      <div class="cover"><img src="img/tranzit-6.webp" alt="Tranzit product cards for expenses, income, odometer and fuel" loading="lazy"></div>
+      <h3>Tranzit</h3>
+      <p>Transport management in one place: fleet, trips, fuel, drivers, GST invoices and transporter payments.</p>
+      <ul class="tags"><li>React</li><li>Node.js</li><li>Express</li><li>MongoDB</li></ul>
+      <span class="open">Open project <svg class="i"><use href="#arrow"/></svg></span>
+    </button>
+
+    <div class="pin" data-c="wins">
+      <p class="label">GitHub, last 12 months</p>
+      <div class="big">826</div>
+      <p>contributions — steady from April through November.</p>
+      <div class="contrib"><img src="img/github-contrib.webp" alt="GitHub contribution graph with 826 contributions in the last year" loading="lazy"></div>
+      <div class="linkrow"><a href="https://github.com/Zaara0511" target="_blank" rel="noopener"><svg class="i"><use href="#gh"/></svg>Zaara0511</a></div>
+    </div>
+
+    <button class="pin note lilac tilt-r" data-c="wins" data-p="grid">
+      <span class="tape"></span>
+      <div class="cover"><img src="img/grid-cert.webp" alt="Flipkart GRiD 8.0 certificate of achievement" loading="lazy"></div>
+      <h3>Flipkart GRID 8.0</h3>
+      <p>National semi-finalist, among teams from across India. September 2026.</p>
+      <span class="open">View certificate <svg class="i"><use href="#arrow"/></svg></span>
+    </button>
+
+    <button class="pin" data-c="project" data-p="pm">
+      <div class="cover"><img src="img/pm-3.webp" alt="Feature correlation heatmap from the predictive maintenance dashboard" loading="lazy"></div>
+      <h3>Predictive Maintenance</h3>
+      <p>A Streamlit dashboard that explores 124,494 equipment records, spots failure patterns and predicts machine failure.</p>
+      <ul class="tags"><li>Python</li><li>Pandas</li><li>scikit-learn</li><li>Plotly</li><li>Streamlit</li></ul>
+      <span class="open">Open project <svg class="i"><use href="#arrow"/></svg></span>
+    </button>
+
+    <div class="pin note sky" data-c="wins skills">
+      <span class="tape"></span>
+      <p class="label">Problem solving</p>
+      <div class="big">500+</div>
+      <p>problems solved across coding platforms, plus a Java DSA solutions repo.</p>
+      <div class="linkrow">
+        <a href="https://leetcode.com/u/Zaara_18/" target="_blank" rel="noopener">LeetCode</a>
+        <a href="https://codeforces.com/profile/palasarazaara" target="_blank" rel="noopener">Codeforces</a>
+        <a href="https://www.geeksforgeeks.org/profile/palasar5y8w" target="_blank" rel="noopener">GeeksforGeeks</a>
+        <a href="https://github.com/Zaara0511/DSA-Solutions-" target="_blank" rel="noopener">DSA repo</a>
+      </div>
+    </div>
+
+    <button class="pin" data-c="project" data-p="jira" data-start="5">
+      <div class="cover"><img src="img/jira-6.webp" alt="Jira Assistant panel drafting a story plan" loading="lazy"></div>
+      <p class="handnote">The AI drafts the plan — nothing is created until you confirm.</p>
+      <span class="open">See the assistant flow <svg class="i"><use href="#arrow"/></svg></span>
+    </button>
+
+    <div class="pin" data-c="skills">
+      <p class="label">Languages</p>
+      <div class="stickers"><span>Java</span><span>C++</span><span>Python</span><span>JavaScript</span><span>TypeScript</span></div>
+    </div>
+
+    <div class="pin note mint tilt-l" data-c="wins">
+      <span class="tape b"></span>
+      <h3>Agrotis Hackathon 2025</h3>
+      <p>Top 10 team. Four of us built an AI crop recommendation prototype in 24 hours.</p>
+    </div>
+
+    <div class="pin" data-c="skills">
+      <p class="label">What I build with</p>
+      <dl class="stack">
+        <div><dt>Frontend</dt><dd>React, Next.js, Redux, Tailwind CSS, responsive design</dd></div>
+        <div><dt>Backend</dt><dd>Node.js, Express, Hono, REST, GraphQL</dd></div>
+        <div><dt>Data</dt><dd>MySQL, MongoDB, Appwrite, Pandas, NumPy</dd></div>
+        <div><dt>AI</dt><dd>LLMs, agentic AI, RAG, MCP, scikit-learn</dd></div>
+        <div><dt>Tools</dt><dd>Git, GitHub, Linux, CI/CD, unit and API testing</dd></div>
+      </dl>
+    </div>
+
+    <button class="pin" data-c="project" data-p="tranzit" data-start="4">
+      <div class="cover"><img src="img/tranzit-5.webp" alt="Tranzit marketing page listing fleet, invoice, salary and tyre management" loading="lazy"></div>
+      <p class="handnote">Fleet, invoices, salaries and tyres — one portal.</p>
+      <span class="open">See Tranzit <svg class="i"><use href="#arrow"/></svg></span>
+    </button>
+
+    <div class="pin note peach tilt-r" data-c="about">
+      <p class="label">Education</p>
+      <h3>Parul University</h3>
+      <p>B.Tech in Computer Science and Engineering, 2024 – 2028. Vadodara, India.</p>
+    </div>
+
+    <div class="pin" data-c="skills">
+      <p class="label">Foundations</p>
+      <div class="stickers"><span>DSA</span><span>OOP &amp; SOLID</span><span>DBMS</span><span>Operating systems</span><span>Networks</span><span>Distributed systems</span></div>
+    </div>
+
+    <div class="pin" data-c="wins about">
+      <p class="label">Certifications</p>
+      <ul class="list">
+        <li><a href="https://www.credly.com/go/rwqk4o4S" target="_blank" rel="noopener">AWS Academy Graduate — Cloud Foundations</a><br><span style="color:var(--soft);font-size:14px">Amazon Web Services, Sep 2026, 20 hours</span></li>
+        <li>Problem Solving (Basic)<br><span style="color:var(--soft);font-size:14px">HackerRank, Aug 2026</span></li>
+        <li>IT Specialist — JavaScript<br><span style="color:var(--soft);font-size:14px">Pearson, Apr 2025</span></li>
+        <li>IBM Python Fundamentals</li>
+      </ul>
+    </div>
+
+    <a class="pin note butter tilt-l" data-c="about" href="#contact" style="text-decoration:none">
+      <span class="tape"></span>
+      <p class="handnote">Hiring for SDE or AI roles? Let's talk.</p>
+      <span class="open">Contact me <svg class="i"><use href="#arrow"/></svg></span>
+    </a>
+  </div>
+</main>
+
+<section class="contact" id="contact">
+  <div class="wrap row">
+    <div>
+      <h2>Let's build something.</h2>
+      <p>Open to SDE and AI engineering roles, internships and interesting problems.</p>
+    </div>
+    <div>
+      <a class="mail" href="mailto:palasarazaara@gmail.com">palasarazaara@gmail.com</a>
+      <div class="linkrow">
+        <a href="https://www.linkedin.com/in/zaara-p/" target="_blank" rel="noopener"><svg class="i"><use href="#li"/></svg>LinkedIn</a>
+        <a href="https://github.com/Zaara0511" target="_blank" rel="noopener"><svg class="i"><use href="#gh"/></svg>GitHub</a>
+        <a href="https://dawn-pond-595.linkyhost.page/" target="_blank" rel="noopener">Resume <svg class="i"><use href="#arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer><div class="wrap">© 2026 Zaara Palasara. Pinned together in Vadodara.</div></footer>
+
+<dialog id="modal" aria-labelledby="m-title">
+  <button class="close" id="m-close" aria-label="Close"><svg class="i"><use href="#x"/></svg></button>
+  <div class="m-grid">
+    <div class="m-media">
+      <div class="m-main">
+        <img id="m-img" alt="">
+        <button class="m-nav prev" id="m-prev" aria-label="Previous screenshot"><svg class="i"><use href="#l"/></svg></button>
+        <button class="m-nav next" id="m-next" aria-label="Next screenshot"><svg class="i"><use href="#r"/></svg></button>
+      </div>
+      <p class="m-cap" id="m-cap"></p>
+      <div class="thumbs" id="m-thumbs"></div>
+    </div>
+    <div class="m-body" id="m-body"></div>
+  </div>
+</dialog>
+
+<script>
+{
+const P={
+ jira:{title:'Jira Masala',sub:'AI-powered project management platform',
+  links:[['Live demo','https://jira-masala.onrender.com/'],['Code','https://github.com/Zaara0511/jira-masala']],
+  tags:['Next.js','TypeScript','Hono','Appwrite','TanStack Query','Vercel AI SDK','OpenAI','Gemini'],
+  points:['Built a full-stack platform for workspaces, projects, task assignment, prioritisation and collaboration, with Table, Kanban and Calendar views.','A deterministic health score rates each project on progress, deadlines and workload, then lists top risks and what to prioritise next.','The Jira Assistant uses OpenAI and Gemini through the Vercel AI SDK: it turns a request into a story with subtasks, assigns them by team workload and suggests due dates — nothing is created until you confirm.','Designed backend APIs and database workflows with structured validation and state management, plus a full activity log.'],
+  shots:[['jira-1','Project health score, key numbers and top risks'],['jira-2','What to prioritise next, and workload per member'],['jira-3','Kanban board with weight and priority badges'],['jira-4','Calendar view of due tasks'],['jira-5','Activity log of every change'],['jira-6','Assistant: a one-line request becomes a story plan'],['jira-7','Assistant: subtasks assigned by workload, with reasons'],['jira-8','Assistant: review the plan, then confirm and create']]},
+ tranzit:{title:'Tranzit',sub:'Transport management platform',
+  links:[['Live site','https://tranzitsolutions.com/']],
+  tags:['React','Node.js','Express','MongoDB'],
+  points:['Built a full-stack platform connecting fleet, vehicles, trips, drivers and finances in one portal.','Developed backend APIs and database workflows for invoice generation, GST billing and transport documentation.','Added trip tracking, fuel management, expense and advance tracking, and a profit and loss view per month.','Includes an issue board for the operations team and summaries of customer billing and transporter payments.'],
+  shots:[['tranzit-1','Dashboard overview (client name blurred)'],['tranzit-2','Profit and loss breakdown with revenue allocation'],['tranzit-3','Invoices, jobs completed and daily summary'],['tranzit-4','Issue board for the operations team'],['tranzit-5','Marketing site: what Tranzit helps you manage'],['tranzit-6','Marketing site: product cards']]},
+ grid:{title:'Flipkart GRID 8.0',sub:'National Semi-Finalist · Prompt the Future',
+  links:[],tags:['Flipkart Early Careers','National level'],
+  points:['Reached the national semi-finals of Flipkart GRiD 8.0, Flipkart\'s engineering challenge for students across India.','Certificate of achievement issued by Flipkart Early Careers on 25 September 2026.'],
+  shots:[['grid-cert','Certificate of achievement, Flipkart GRiD 8.0']]},
+ pm:{title:'Predictive Maintenance',sub:'AI-based equipment monitoring system',
+  links:[['Live app','https://ai-predictive-maintenance-dashboard-dlncyegh8fw43lybhdb9dh.streamlit.app/'],['Code','https://github.com/Zaara0511/ai-predictive-maintenance-dashboard']],
+  tags:['Python','Pandas','NumPy','scikit-learn','Plotly','Streamlit'],
+  points:['Analyses 124,494 daily device records across nine sensor metrics to find the patterns behind 106 failures.','Built preprocessing pipelines that turn raw equipment data into ML-ready inputs.','Interactive Plotly views: KPIs, metric distributions, trend analysis and a feature correlation heatmap.','A prediction form takes sensor readings and returns a failure prediction from the trained model.'],
+  shots:[['pm-1','Dataset preview: 124,494 rows, 12 columns'],['pm-2','Key numbers and failure trend analysis'],['pm-3','Feature correlation heatmap'],['pm-4','Failure prediction form']]}
+};
+const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const dlg=document.getElementById('modal'),img=document.getElementById('m-img'),cap=document.getElementById('m-cap'),th=document.getElementById('m-thumbs'),body=document.getElementById('m-body');
+let cur=null,idx=0;
+const show=i=>{const s=cur.shots;idx=(i+s.length)%s.length;img.src='img/'+s[idx][0]+'.webp';img.alt=cur.title+': '+s[idx][1];cap.textContent=(idx+1)+' of '+s.length+' — '+s[idx][1];
+ th.querySelectorAll('button').forEach((b,j)=>{b.setAttribute('aria-current',j===idx);if(j===idx)b.scrollIntoView({block:'nearest',inline:'nearest'})})};
+const open=(k,start)=>{cur=P[k];
+ body.innerHTML='<h2 id="m-title">'+esc(cur.title)+'</h2><p class="sub">'+esc(cur.sub)+'</p>'+(cur.links.length?'<div class="linkrow">'+cur.links.map(l=>'<a href="'+l[1]+'" target="_blank" rel="noopener">'+esc(l[0])+' <svg class="i"><use href="#arrow"/></svg></a>').join('')+'</div>':'')+'<ul>'+cur.points.map(p=>'<li>'+esc(p)+'</li>').join('')+'</ul><ul class="tags">'+cur.tags.map(t=>'<li>'+esc(t)+'</li>').join('')+'</ul>';
+ th.innerHTML=cur.shots.map((s,j)=>'<button aria-label="Screenshot '+(j+1)+': '+esc(s[1])+'"><img src="img/'+s[0]+'.webp" alt="" loading="lazy"></button>').join('');
+ th.querySelectorAll('button').forEach((b,j)=>b.addEventListener('click',()=>show(j)));
+ if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');
+ const one=cur.shots.length<2;['m-prev','m-next'].forEach(id=>document.getElementById(id).hidden=one);th.hidden=one;
+ show(start||0)};
+document.querySelectorAll('button.pin[data-p]').forEach(b=>b.addEventListener('click',()=>open(b.dataset.p,+(b.dataset.start||0))));
+document.getElementById('m-prev').addEventListener('click',()=>show(idx-1));
+document.getElementById('m-next').addEventListener('click',()=>show(idx+1));
+document.getElementById('m-close').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+dlg.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(idx-1);if(e.key==='ArrowRight')show(idx+1)});
+
+const chips=document.querySelectorAll('.chip'),pins=document.querySelectorAll('#board .pin');
+const filter=f=>{chips.forEach(c=>c.setAttribute('aria-pressed',c.dataset.f===f));pins.forEach(p=>p.hidden=!(f==='all'||p.dataset.c.split(' ').includes(f)))};
+chips.forEach(c=>c.addEventListener('click',()=>filter(c.dataset.f)));
+document.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',()=>filter(a.dataset.jump)));
+}
+</script>
+</body>
+</html>
